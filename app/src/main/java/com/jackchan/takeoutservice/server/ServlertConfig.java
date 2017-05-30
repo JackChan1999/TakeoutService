@@ -3,6 +3,7 @@ package com.jackchan.takeoutservice.server;
 import com.jackchan.takeoutservice.servlet.AddressServlet;
 import com.jackchan.takeoutservice.servlet.BusinessServlet;
 import com.jackchan.takeoutservice.servlet.HomeServlet;
+import com.jackchan.takeoutservice.servlet.ImageServlet;
 import com.jackchan.takeoutservice.servlet.OrderServlet;
 import com.jackchan.takeoutservice.servlet.PayServlet;
 import com.jackchan.takeoutservice.servlet.SellerListServlet;
@@ -41,5 +42,6 @@ public class ServlertConfig {
         handler.addServlet(new ServletHolder(new PayServlet()), "/TakeoutService/pay");
         handler.addServlet(new ServletHolder(new SellerListServlet()), "/TakeoutService/sellerlist");
         handler.addServlet(new ServletHolder(new UserLoginServlet()), "/TakeoutService/login");
+        handler.addServlet(new ServletHolder(new ImageServlet()), "/TakeoutService/image");
     }
 }

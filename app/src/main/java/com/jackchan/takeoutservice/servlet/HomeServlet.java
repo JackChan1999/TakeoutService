@@ -1,7 +1,6 @@
 package com.jackchan.takeoutservice.servlet;
 
 import com.jackchan.takeoutservice.App;
-import com.jackchan.takeoutservice.ConstantValue;
 import com.jackchan.takeoutservice.bean.Category;
 import com.jackchan.takeoutservice.bean.Head;
 import com.jackchan.takeoutservice.bean.HomeInfo;
@@ -79,9 +78,9 @@ public class HomeServlet extends HttpServlet {
 			Promotion promotion = new Promotion();
 			promotion.setId(id);
 			// http://localhost:8080/TakeoutService/home/
-			promotion.setPic(ConstantValue.HOST + "/TakeoutService/" + "imgs/promotion/" + id + ".jpg");
+			promotion.setPic(ImageServlet.baseurl + "imgs/promotion/" + id + ".jpg");
 
-			promotion.setInfo("promotion info...");
+			promotion.setInfo("");
 			promotionList.add(promotion);
 		}
 		// 分类信息
@@ -90,7 +89,7 @@ public class HomeServlet extends HttpServlet {
 		for (int id = 1; id < 9; id++) {
 			Category category = new Category();
 			category.setId(id);
-			category.setPic(ConstantValue.HOST + "/TakeoutService/" + "imgs/category/" + id + ".png");
+			category.setPic(ImageServlet.baseurl + "imgs/category/" + id + ".png");
 			category.setName(catetories[id-1]);
 			categorieList.add(category);
 		}
@@ -99,7 +98,7 @@ public class HomeServlet extends HttpServlet {
 		ArrayList<Seller> nearbySellerList = new ArrayList<Seller>();
 		Seller itcast = new Seller();
 		itcast.setId(1);
-		itcast.setPic(ConstantValue.HOST + "/TakeoutService/" + "imgs/category/" + 1 + ".png");
+		itcast.setPic(ImageServlet.baseurl + "imgs/category/" + 1 + ".png");
 		itcast.setName("星星外卖项目");
 		itcast.setScore("5");
 
