@@ -80,7 +80,7 @@ public class HomeServlet extends HttpServlet {
 			// http://localhost:8080/TakeoutService/home/
 			promotion.setPic(ImageServlet.baseurl + "imgs/promotion/" + id + ".jpg");
 
-			promotion.setInfo("");
+			promotion.setInfo("星星外卖优惠活动");
 			promotionList.add(promotion);
 		}
 		// 分类信息

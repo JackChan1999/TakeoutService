@@ -1,12 +1,10 @@
 package com.jackchan.takeoutservice.servlet;
 
-import com.jackchan.takeoutservice.ConstantValue;
+import com.jackchan.takeoutservice.App;
 import com.jackchan.takeoutservice.bean.GoodsInfo;
 import com.jackchan.takeoutservice.bean.GoodsTypeInfo;
 import com.jackchan.takeoutservice.bean.Response;
 import com.jackchan.takeoutservice.utils.CommonUtil;
-
-import net.sf.json.JSONArray;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,6 +57,7 @@ public class BusinessServlet extends HttpServlet {
             throws ServletException, IOException {
 
         int sellerId = Integer.parseInt(request.getParameter("sellerId"));
+
         List<GoodsTypeInfo> list = new ArrayList<GoodsTypeInfo>();
 
         for (int i = 0; i < types.length; i++) {
@@ -76,7 +75,8 @@ public class BusinessServlet extends HttpServlet {
 
         Response res = new Response();
         res.setCode("0");
-        String data = JSONArray.fromObject(list).toString();
+        // String data = JSONArray.fromObject(list).toString();
+        String data = App.getGson().toJson(list);
         res.setData(data);
 
         CommonUtil.renderJson(response, res);

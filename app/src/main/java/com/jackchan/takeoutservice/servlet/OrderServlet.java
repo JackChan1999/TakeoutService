@@ -2,7 +2,6 @@ package com.jackchan.takeoutservice.servlet;
 
 import com.alibaba.fastjson.JSON;
 import com.jackchan.takeoutservice.App;
-import com.jackchan.takeoutservice.ConstantValue;
 import com.jackchan.takeoutservice.bean.Distribution;
 import com.jackchan.takeoutservice.bean.GoodsInfo;
 import com.jackchan.takeoutservice.bean.Location;
@@ -24,6 +23,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 /**
  * ============================================================
  * Copyright：JackChan和他的朋友们有限公司版权所有 (c) 2017
@@ -183,7 +183,7 @@ public class OrderServlet extends HttpServlet {
 
 		Seller itcast = new Seller();
 		itcast.setId(1);
-		itcast.setPic(ConstantValue.HOST + "/TakeoutService/" + "imgs/category/" + 1 + ".png");
+		itcast.setPic(ImageServlet.baseurl + "imgs/category/" + 1 + ".png");
 		itcast.setName("星星外卖项目");
 		itcast.setScore("5");
 		order.setSeller(itcast);
